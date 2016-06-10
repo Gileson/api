@@ -9,7 +9,7 @@
             "Gileson\\Api\\": "src/"
         },
         "files": [
-            "init.php"
+            "src/init.php"
         ]
     },
     "license": "MIT"
