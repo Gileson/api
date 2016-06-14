@@ -12,7 +12,7 @@ class CategoryResponse extends Response {
     protected $category = null;
 
     /**
-     * @return array
+     * @return Category
      */
     public function getCategory() {
         return $this->category;

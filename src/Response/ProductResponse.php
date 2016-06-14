@@ -1,88 +1,31 @@
 <?php
 namespace Gileson\Api\Response;
 
-use Gileson\Api\Collections\Products;
+use Gileson\Api\Models\Product;
 
 class ProductResponse extends Response {
 
     /**
-     * @var Products
+     * @var Product
      */
-    protected $products = [];
-    protected $page     = 1;
-    protected $count    = 0;
-    protected $limit    = 50;
+    protected $product = null;
 
     /**
-     * @return int
+     * @return Product
      */
-    public function getLimit() {
-        return $this->limit;
+    public function getProduct() {
+        return $this->product;
     }
 
     /**
-     * @param int $limit
+     * @param array $product
      *
      * @return $this
      */
-    public function setLimit($limit) {
-        $this->limit = $limit;
+    public function setProduct($product) {
+        $this->product = Product::create($product);
 
         return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPage() {
-        return $this->page;
-    }
-
-    /**
-     * @param int $page
-     *
-     * @return $this
-     */
-    public function setPage($page) {
-        $this->page = $page;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getCount() {
-        return $this->count;
-    }
-
-    /**
-     * @param int $count
-     *
-     * @return $this
-     */
-    public function setCount($count) {
-        $this->count = $count;
-
-        return $this;
-    }
-
-    /**
-     * @param $products
-     *
-     * @return $this
-     */
-    protected function setProducts($products) {
-        $this->products = Products::create($products);
-
-        return $this;
-    }
-
-    /**
-     * @return Products
-     */
-    function getProducts() {
-        return $this->products;
     }
 
 }
